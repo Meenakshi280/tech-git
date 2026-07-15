@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+  ┌─────────────────────────────────────────────────────────────┐
+  │  LAYER 1: STRUCTURE  (HTML = the "skeleton" of the page)     │
+  │  This file says WHAT is on the screen: a title, an input     │
+  │  box, a button, and an empty list. It does not decide how    │
+  │  it LOOKS (that's CSS) or how it BEHAVES (that's JavaScript). │
+  └─────────────────────────────────────────────────────────────┘
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Tasks</title>
+
+  <!-- Pull in the "looks" (CSS) and the "behavior" (JS) files -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="card">
+    <h1>✅ My Tasks</h1>
+    <p class="subtitle">A tiny app to learn how software works.</p>
+
+    <!-- The input box + button where a user TYPES a task -->
+    <form id="task-form" class="row">
+      <input
+        id="task-input"
+        type="text"
+        placeholder="What do you need to do?"
+        autocomplete="off"
+      />
+      <button type="submit">Add</button>
+    </form>
+
+    <!-- The list starts EMPTY. JavaScript fills it in as tasks are added. -->
+    <ul id="task-list"></ul>
+
+    <p id="empty-note" class="empty-note">No tasks yet — add your first one above 👆</p>
+  </main>
+
+  <!-- Load the behavior LAST, so the page exists before the code runs -->
+  <script src="app.js"></script>
+</body>
+</html>
