@@ -10,7 +10,7 @@
 /* The whole page background + centering */
 body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #0d9488, #14b8a6);
   min-height: 100vh;
   margin: 0;
   display: flex;
@@ -57,7 +57,7 @@ h1 {
 }
 
 #task-input:focus {
-  border-color: #8b5cf6;
+  border-color: #14b8a6;
 }
 
 button {
@@ -65,14 +65,14 @@ button {
   font-size: 15px;
   font-weight: 600;
   color: #ffffff;
-  background: #8b5cf6;
+  background: #0d9488;
   border: none;
   border-radius: 10px;
   cursor: pointer;
 }
 
 button:hover {
-  background: #7c3aed;
+  background: #0f766e;
 }
 
 /* The list of tasks */
