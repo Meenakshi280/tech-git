@@ -119,3 +119,30 @@ li.done span {
   font-size: 14px;
   margin-top: 20px;
 }
+
+/* FEATURE: Task Progress footer — counter on the left, clear button on the right */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #f3f4f6;
+}
+
+#counter {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.clear-btn {
+  background: transparent;
+  color: #0d9488;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 10px;
+}
+
+.clear-btn:hover {
+  background: #f0fdfa;
+}

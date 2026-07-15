@@ -14,6 +14,10 @@ const form      = document.getElementById("task-form");
 const input     = document.getElementById("task-input");
 const list      = document.getElementById("task-list");
 const emptyNote = document.getElementById("empty-note");
+// FEATURE: Task Progress — the counter text + the "clear completed" button
+const footer    = document.getElementById("footer");
+const counter   = document.getElementById("counter");
+const clearBtn  = document.getElementById("clear-btn");
 
 // STEP 2 — This is the app's MEMORY (its "data").
 // We load any tasks saved from last time; if none, we start empty.
@@ -32,6 +36,12 @@ function render() {
 
   // Show or hide the "no tasks yet" note.
   emptyNote.style.display = tasks.length === 0 ? "block" : "none";
+
+  // FEATURE: Task Progress — update the counter and the clear button.
+  const doneCount = tasks.filter(function (t) { return t.done; }).length;
+  counter.textContent = tasks.length + " tasks · " + doneCount + " done";
+  footer.style.display = tasks.length === 0 ? "none" : "flex";      // hide footer when list is empty
+  clearBtn.style.display = doneCount === 0 ? "none" : "inline-block"; // only show button if there's something to clear
 
   // For each task in memory, build one row on the page.
   tasks.forEach(function (task, index) {
@@ -73,6 +83,14 @@ form.addEventListener("submit", function (event) {
   input.value = "";                          // clear the box
   save();                                    // remember it
   render();                                  // show it
+});
+
+// FEATURE: Task Progress — when "Clear completed" is clicked,
+// keep only the tasks that are NOT done, then save + redraw.
+clearBtn.addEventListener("click", function () {
+  tasks = tasks.filter(function (t) { return !t.done; });
+  save();
+  render();
 });
 
 // STEP 6 — Draw everything once when the app first opens.
